@@ -10,14 +10,13 @@ import {
 
 import Page from '../components/Page.js'
 
-export default class Home extends React.Component {
+export default class About extends React.Component {
   render() {
     return (
-      <Page name='/'>
+      <Page name='/resume'>
         <Button>
-          Button Text
+          Resume
         </Button>
-        text
       </Page>
     )
   }
