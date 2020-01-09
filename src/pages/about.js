@@ -10,13 +10,13 @@ import {
 
 import Page from '../components/Page.js'
 
+import image from '../img/Headshot_BascomSmile.jpg'
+
 export default class About extends React.Component {
   render() {
     return (
       <Page name='/about'>
-        <Button>
-          About
-        </Button>
+        <img src={image} />
       </Page>
     )
   }

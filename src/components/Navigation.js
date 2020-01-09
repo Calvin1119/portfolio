@@ -36,13 +36,9 @@ export default class Navigation extends React.Component {
 
 class NavButton extends React.Component {
   render() {
-    return this.props.current ? (
-      <Button disabled={true}>
-        {this.props.text}
-      </Button>
-    ) : (
+    return (
       <Link to={this.props.link}>
-        <Button>
+        <Button disabled={this.props.current}>
           {this.props.text}
         </Button>
       </Link>

@@ -1,5 +1,6 @@
 import React from "react"
 import 'typeface-roboto';
+import Container from '@material-ui/core/Container'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import {
   Button,
@@ -17,7 +18,9 @@ export default class Page extends React.Component {
       <React.Fragment>
         <CssBaseline />
         <Navigation current={this.props.name} />
-        {this.props.children}
+        <Container>
+          {this.props.children}
+        </Container>
       </React.Fragment>
     )
   }

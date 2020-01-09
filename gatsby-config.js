@@ -5,5 +5,7 @@
  */
 
 module.exports = {
-  plugins: ['gatsby-theme-material-ui'],
+  plugins: [
+    'gatsby-theme-material-ui',
+  ],
 }
