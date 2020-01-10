@@ -19,18 +19,21 @@ import image from '../img/Headshot_BascomSmile.jpg'
 const projects = [
   {
     title: 'p1',
-    desc: 'asdf',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer a tellus orci. Donec nisi mi, posuere a dui vitae, rhoncus luctus velit. Etiam interdum laoreet est, eu fermentum purus scelerisque sed. Proin ac erat sollicitudin quam scelerisque imperdiet non ut diam. Nullam at eros ex. Curabitur id dignissim diam. Quisque vel congue nunc, sed mattis mi. Curabitur consectetur pretium condimentum. Sed varius consequat dui, at iaculis nunc pretium a. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tempus lorem leo, vestibulum pellentesque felis congue in. Quisque nec elit sit amet orci vulputate sagittis.',
     img: image,
+    link: 'google.com',
   },
   {
     title: 'p2',
-    desc: 'qwer',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer a tellus orci. Donec nisi mi, posuere a dui vitae, rhoncus luctus velit. Etiam interdum laoreet est, eu fermentum purus scelerisque sed. Proin ac erat sollicitudin quam scelerisque imperdiet non ut diam. Nullam at eros ex. Curabitur id dignissim diam. Quisque vel congue nunc, sed mattis mi. Curabitur consectetur pretium condimentum. Sed varius consequat dui, at iaculis nunc pretium a. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tempus lorem leo, vestibulum pellentesque felis congue in. Quisque nec elit sit amet orci vulputate sagittis.',
     img: image,
+    link: 'google.com',
   },
   {
     title: 'p3',
-    desc: 'zxcv',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer a tellus orci. Donec nisi mi, posuere a dui vitae, rhoncus luctus velit. Etiam interdum laoreet est, eu fermentum purus scelerisque sed. Proin ac erat sollicitudin quam scelerisque imperdiet non ut diam. Nullam at eros ex. Curabitur id dignissim diam. Quisque vel congue nunc, sed mattis mi. Curabitur consectetur pretium condimentum. Sed varius consequat dui, at iaculis nunc pretium a. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tempus lorem leo, vestibulum pellentesque felis congue in. Quisque nec elit sit amet orci vulputate sagittis.',
     img: image,
+    link: 'google.com',
   },
 ]
 
@@ -60,7 +63,7 @@ export default class About extends React.Component {
             title={projects[i].title}
             subtitle={projects[i].desc}
             actionIcon={
-              <Button onClick={() => this.handleOpen(projects[i].title)}>
+              <Button onClick={() => this.handleOpen(projects[i])}>
                 More
               </Button>
             }
@@ -73,7 +76,7 @@ export default class About extends React.Component {
         <GridList>
           {tiles}
         </GridList>
-        <ProjectModal open={this.state.open} onClose={this.handleClose} project={this.state.project} />
+        <ProjectModal open={this.state.open} onClose={this.handleClose} project={this.state.project}/>
       </Page>
     )
   }
