@@ -3,8 +3,6 @@ import 'typeface-roboto'
 import GridList from '@material-ui/core/GridList'
 import GridListTile from '@material-ui/core/GridListTile'
 import GridListTileBar from '@material-ui/core/GridListTileBar'
-import Modal from '@material-ui/core/Modal'
-import Paper from '@material-ui/core/Paper'
 import {
   Button,
   CardActionArea,
@@ -14,6 +12,7 @@ import {
 } from "gatsby-theme-material-ui";
 
 import Page from '../components/Page.js'
+import ProjectModal from '../components/ProjectModal.js'
 
 import image from '../img/Headshot_BascomSmile.jpg'
 
@@ -39,13 +38,14 @@ export default class About extends React.Component {
   constructor() {
     super()
     this.state = {
-      open: false
+      open: false,
+      project: null,
     }
     this.handleOpen = this.handleOpen.bind(this)
     this.handleClose = this.handleClose.bind(this)
   }
-  handleOpen() {
-    this.setState({open: true})
+  handleOpen(proj) {
+    this.setState({open: true, project: proj})
   }
   handleClose() {
     this.setState({open: false})
@@ -60,9 +60,9 @@ export default class About extends React.Component {
             title={projects[i].title}
             subtitle={projects[i].desc}
             actionIcon={
-              <IconButton onClick={this.handleOpen}>
-                A
-              </IconButton>
+              <Button onClick={() => this.handleOpen(projects[i].title)}>
+                More
+              </Button>
             }
           />
         </GridListTile>
@@ -73,11 +73,7 @@ export default class About extends React.Component {
         <GridList>
           {tiles}
         </GridList>
-        <Modal open={this.state.open} onClose={this.handleClose}>
-          <Paper>
-            Stuff
-          </Paper>
-        </Modal>
+        <ProjectModal open={this.state.open} onClose={this.handleClose} project={this.state.project} />
       </Page>
     )
   }
