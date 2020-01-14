@@ -1,5 +1,4 @@
 import React from "react"
-import { styled } from '@material-ui/core/styles';
 import 'typeface-roboto';
 import Card from '@material-ui/core/Card'
 import CardActions from '@material-ui/core/CardActions'
@@ -18,9 +17,9 @@ import {
   Link,
 } from "gatsby-theme-material-ui";
 
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import CloseIcon from '@material-ui/icons/Close';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+
+import Carousel from '../components/Carousel.js'
 
 export default class ProjectModal extends React.Component {
   render() {
@@ -56,48 +55,5 @@ export default class ProjectModal extends React.Component {
         </Grid>
       </Modal>
     ) : null
-  }
-}
-
-const AspectCardMedia = styled(CardMedia)({
-  height: 0,
-  paddingTop: '56%'
-})
-
-const CarouselButton = styled(IconButton)({
-  position: 'absolute',
-  top: '50%',
-  transform: 'translateY(-50%)'
-})
-
-class Carousel extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      curr: 0
-    }
-    this.left = this.left.bind(this)
-    this.right=  this.right.bind(this)
-  }
-  left() {
-    this.setState({curr: this.state.curr - 1})
-  }
-  right() {
-    this.setState({curr: this.state.curr + 1})
-  }
-  render() {
-    return !Array.isArray(this.props.images) ? (
-      <AspectCardMedia image={this.props.images} />
-    ) : (
-      <div style={{position: 'relative'}}>
-        <AspectCardMedia image={this.props.images[this.state.curr]} />
-        <CarouselButton style={{left: 0}} onClick={this.left} disabled={this.state.curr == 0}>
-          <ChevronLeftIcon />
-        </CarouselButton>
-        <CarouselButton style={{right: 0}} onClick={this.right} disabled={this.state.curr == this.props.images.length - 1}>
-          <ChevronRightIcon />
-        </CarouselButton>
-      </div>
-    )
   }
 }
