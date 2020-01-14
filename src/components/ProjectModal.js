@@ -1,4 +1,5 @@
 import React from "react"
+import { styled } from '@material-ui/core/styles';
 import 'typeface-roboto';
 import Card from '@material-ui/core/Card'
 import CardActions from '@material-ui/core/CardActions'
@@ -58,6 +59,17 @@ export default class ProjectModal extends React.Component {
   }
 }
 
+const AspectCardMedia = styled(CardMedia)({
+  height: 0,
+  paddingTop: '56%'
+})
+
+const CarouselButton = styled(IconButton)({
+  position: 'absolute',
+  top: '50%',
+  transform: 'translateY(-50%)'
+})
+
 class Carousel extends React.Component {
   constructor(props) {
     super(props)
@@ -75,16 +87,16 @@ class Carousel extends React.Component {
   }
   render() {
     return !Array.isArray(this.props.images) ? (
-      <CardMedia style={{height: 0, paddingTop: '56%'}} image={this.props.images} />
+      <AspectCardMedia image={this.props.images} />
     ) : (
       <div style={{position: 'relative'}}>
-        <CardMedia style={{height: 0, paddingTop: '56%'}} image={this.props.images[this.state.curr]} />
-        <IconButton style={{position: 'absolute', top: '50%', left: 0, transform: 'translateY(-50%)'}} onClick={this.left} disabled={this.state.curr == 0}>
+        <AspectCardMedia image={this.props.images[this.state.curr]} />
+        <CarouselButton style={{left: 0}} onClick={this.left} disabled={this.state.curr == 0}>
           <ChevronLeftIcon />
-        </IconButton>
-        <IconButton style={{position: 'absolute', top: '50%', right: 0, transform: 'translateY(-50%)'}} onClick={this.right} disabled={this.state.curr == this.props.images.length - 1}>
+        </CarouselButton>
+        <CarouselButton style={{right: 0}} onClick={this.right} disabled={this.state.curr == this.props.images.length - 1}>
           <ChevronRightIcon />
-        </IconButton>
+        </CarouselButton>
       </div>
     )
   }

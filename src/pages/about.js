@@ -1,6 +1,5 @@
 import React from "react"
 import 'typeface-roboto'
-import Grid from '@material-ui/core/Grid'
 import GridList from '@material-ui/core/GridList'
 import GridListTile from '@material-ui/core/GridListTile'
 import Typography from '@material-ui/core/Typography'
@@ -25,21 +24,21 @@ export default class About extends React.Component {
             <Typography variant='h3'>
               About Me:
             </Typography>
-            <Typography variant='body1'>
+            <Typography variant='body1' paragraph>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer a tellus orci. Donec nisi mi, posuere a dui vitae, rhoncus luctus velit. Etiam interdum laoreet est, eu fermentum purus scelerisque sed. Proin ac erat sollicitudin quam scelerisque imperdiet non ut diam. Nullam at eros ex. Curabitur id dignissim diam. Quisque vel congue nunc, sed mattis mi. Curabitur consectetur pretium condimentum. Sed varius consequat dui, at iaculis nunc pretium a. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tempus lorem leo, vestibulum pellentesque felis congue in. Quisque nec elit sit amet orci vulputate sagittis.
             </Typography>
           </GridListTile>
           <GridListTile rows={2}>
-            <img src={image} style={{width: '100%'}}/>
+            <img src={image} />
           </GridListTile>
           <GridListTile rows={2}>
-            <img src={image} style={{width: '100%'}}/>
+            <img src={image} />
           </GridListTile>
           <GridListTile rows={2}>
-            <Typography variant='body2'>
+            <Typography variant='body2' paragraph>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer a tellus orci. Donec nisi mi, posuere a dui vitae, rhoncus luctus velit. Etiam interdum laoreet est, eu fermentum purus scelerisque sed. Proin ac erat sollicitudin quam scelerisque imperdiet non ut diam. Nullam at eros ex. Curabitur id dignissim diam. Quisque vel congue nunc, sed mattis mi. Curabitur consectetur pretium condimentum. Sed varius consequat dui, at iaculis nunc pretium a. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tempus lorem leo, vestibulum pellentesque felis congue in. Quisque nec elit sit amet orci vulputate sagittis.
             </Typography>
-            <Typography variant='body1'>
+            <Typography variant='body1' paragraph>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer a tellus orci. Donec nisi mi, posuere a dui vitae, rhoncus luctus velit. Etiam interdum laoreet est, eu fermentum purus scelerisque sed. Proin ac erat sollicitudin quam scelerisque imperdiet non ut diam. Nullam at eros ex. Curabitur id dignissim diam. Quisque vel congue nunc, sed mattis mi. Curabitur consectetur pretium condimentum. Sed varius consequat dui, at iaculis nunc pretium a. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tempus lorem leo, vestibulum pellentesque felis congue in. Quisque nec elit sit amet orci vulputate sagittis.
             </Typography>
           </GridListTile>
