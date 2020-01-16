@@ -25,7 +25,7 @@ export default class ProjectModal extends React.Component {
   render() {
     return this.props.project ? (
       <Modal open={this.props.open} onClose={this.props.onClose}>
-        <Grid container style={{height: '100%'}} justify='center' alignItems='center'>
+        <Grid container justify='center' alignItems='center'>
           <Grid item xs={6}>
             <Card>
               <Carousel images={this.props.project.img}/>
