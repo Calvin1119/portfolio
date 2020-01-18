@@ -21,7 +21,7 @@ export default class Page extends React.Component {
       <React.Fragment>
         <CssBaseline />
         <Navigation current={this.props.name} />
-        <Container>
+        <Container style={{paddingTop: '40px'}}>
           {this.props.children}
         </Container>
         <ThemeToggle />

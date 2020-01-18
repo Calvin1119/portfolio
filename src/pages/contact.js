@@ -1,4 +1,5 @@
 import React from "react"
+import { styled } from '@material-ui/core/styles';
 import 'typeface-roboto'
 import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
@@ -21,11 +22,14 @@ const info = [
   ['Github', 'Calvin1119', 'https://github.com/Calvin1119'],
 ]
 
+const InfoText = styled(Typography)({
+  paddingTop: '70px',
+})
+
 export default class About extends React.Component {
   render() {
     const cards = []
     for (let i = 0; i < info.length; i++) {
-      console.log(info);
       cards.push(
         <Grid item xs>
           <Card key={i} raised>
@@ -43,8 +47,21 @@ export default class About extends React.Component {
     }
     return (
       <Page name='/contact'>
-        <Grid container spacing={4} alignItems='center'>
+        <Grid container spacing={4}>
           {cards}
+        </Grid>
+        <Grid container justify='center'>
+          <Grid item raised xs={9}>
+            <InfoText variant='h4' align='justify'>
+              The best way to contact me is to send me an email at the address above
+            </InfoText>
+            <InfoText variant='h4' align='justify'>
+              If you prefer to use a different communication method (Skype, Slack, etc.) let me know in the email and we can set up a time to meet
+            </InfoText>
+            <InfoText variant='h4' align='justify'>
+              I'm usually available from 12:00p to 2:00p and 5:00p to 8:00p US-Central time (UTC -6:00), but I'm willing to meet at other times if needed
+            </InfoText>
+          </Grid>
         </Grid>
       </Page>
     )
