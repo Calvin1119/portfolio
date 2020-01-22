@@ -92,7 +92,7 @@ export default class Resume extends React.Component {
             <Card raised>
               <CardContent>
                 <Typography variant='h5'>
-                  Wisconsin Union:
+                  Wisconsin Autonomous:
                 </Typography>
                 <Typography variant='body1'>
                   ;lskadjf;asjdfas

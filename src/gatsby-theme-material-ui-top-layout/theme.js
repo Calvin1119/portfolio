@@ -1,13 +1,15 @@
 import { createMuiTheme } from "@material-ui/core";
 import green from '@material-ui/core/colors/green';
 
-const storage = window.localStorage
+// if (typeof window !== undefined)
+//   var dark = checkDark()
+//
+// function checkDark() {
+//   const storage = window.localStorage
+//   return storage.getItem('theme') === 'dark';
+// }
 
-console.log(storage.getItem('theme'));
-
-let dark = storage.getItem('theme') === 'dark';
-
-console.log(dark);
+let dark = true
 
 const theme = createMuiTheme({
   palette: {
