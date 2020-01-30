@@ -83,7 +83,7 @@ export default class Resume extends React.Component {
             <Card raised>
               <CardContent>
                 <Typography variant='h5' paragraph>
-                  Algonquian Database Project:
+                  Digital Linguistics:
                 </Typography>
                 <Typography variant='body1' paragraph>
                   Designed/maintained a specification for the digital storage of linguistic data with a small team

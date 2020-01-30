@@ -23,7 +23,13 @@ import Carousel from '../components/Carousel.js'
 
 export default class ProjectModal extends React.Component {
   render() {
-    return this.props.project ? (
+    if (!this.props.project)
+      return null
+    const links = []
+    for (let [key, value] of Object.entries(this.props.project.links)) {
+      links.push(<Button href={value} key={key}>{key}</Button>)
+    }
+    return (
       <Modal open={this.props.open} onClose={this.props.onClose}>
         <Grid container justify='center' alignItems='center'>
           <Grid item xs={6}>
@@ -42,18 +48,13 @@ export default class ProjectModal extends React.Component {
               </CardContent>
               <CardActionArea>
                 <CardActions>
-                  <Button href={this.props.project.link}>
-                    Demo
-                  </Button>
-                  <Button href={this.props.project.link}>
-                    Source
-                  </Button>
+                  {links}
                 </CardActions>
               </CardActionArea>
             </Card>
           </Grid>
         </Grid>
       </Modal>
-    ) : null
+    )
   }
 }

@@ -18,22 +18,60 @@ import image from '../img/Headshot_BascomSmile.jpg'
 
 const projects = [
   {
-    title: 'p1',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer a tellus orci. Donec nisi mi, posuere a dui vitae, rhoncus luctus velit. Etiam interdum laoreet est, eu fermentum purus scelerisque sed. Proin ac erat sollicitudin quam scelerisque imperdiet non ut diam. Nullam at eros ex. Curabitur id dignissim diam. Quisque vel congue nunc, sed mattis mi. Curabitur consectetur pretium condimentum. Sed varius consequat dui, at iaculis nunc pretium a. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tempus lorem leo, vestibulum pellentesque felis congue in. Quisque nec elit sit amet orci vulputate sagittis.',
+    title: 'Rishi: Embedded Modules',
+    desc: `Many people find scientific papers hard to read, especially if they aren\'t used to reading them.
+           This project\'s goal was to remedy this by adding interactive elements to the writing.
+           We took a psychology paper on executive function, and added simulations of the experiments that the paper was based on.
+           This concept would later be expanded on in the SeeVita project.`,
     img: [image, image, image],
-    link: 'http://www.google.com',
+    links: {
+      source: 'url',
+      demo: 'url',
+    },
   },
   {
-    title: 'p2',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer a tellus orci. Donec nisi mi, posuere a dui vitae, rhoncus luctus velit. Etiam interdum laoreet est, eu fermentum purus scelerisque sed. Proin ac erat sollicitudin quam scelerisque imperdiet non ut diam. Nullam at eros ex. Curabitur id dignissim diam. Quisque vel congue nunc, sed mattis mi. Curabitur consectetur pretium condimentum. Sed varius consequat dui, at iaculis nunc pretium a. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tempus lorem leo, vestibulum pellentesque felis congue in. Quisque nec elit sit amet orci vulputate sagittis.',
+    title: 'Rishi: SeeVita Homepage',
+    desc: `This was my first foray into traditional web design. This was just a simple website for the SeeVita project, but I'm very happy with how it turned out.
+           In particular, the back and forth process of making changes, seeing how the changes were recieved by the client, and moving forward was quite a valueable experience.`,
     img: [image, image, image],
-    link: 'google.com',
+    links: {
+      source: 'url',
+      demo: 'url',
+    },
   },
   {
-    title: 'p3',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer a tellus orci. Donec nisi mi, posuere a dui vitae, rhoncus luctus velit. Etiam interdum laoreet est, eu fermentum purus scelerisque sed. Proin ac erat sollicitudin quam scelerisque imperdiet non ut diam. Nullam at eros ex. Curabitur id dignissim diam. Quisque vel congue nunc, sed mattis mi. Curabitur consectetur pretium condimentum. Sed varius consequat dui, at iaculis nunc pretium a. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tempus lorem leo, vestibulum pellentesque felis congue in. Quisque nec elit sit amet orci vulputate sagittis.',
+    title: 'Rishi: SeeVita',
+    desc: `This is the big brother of the Embedded Modules project we did earlier. The goal here was to make the earlier approach more generalizable so we could
+           create an authoring tool for interactive papers. The embedded experiment simulations were brought back, and an additional focus on interactive data
+           visualization was added.`,
     img: [image, image, image],
-    link: 'google.com',
+    links: {
+      source: 'url',
+      demo: 'url',
+    },
+  },
+  {
+    title: 'Digital Linguistics: DaFoDiL',
+    desc: `Being a double major, you always jump at the opportunity to use both majors at the same time. The Digital Linguistics project has provided me many
+           opportunities to do exactly that. The "Data Format for Digital Linguistics" is a standardized way for linguists to store information about languages,
+           which is helpful for many of the other projects that Digital Linguistics is working on. This project taught me a lot about schema design, and also
+           about navigating through big open-source projects like this`,
+    img: [image, image, image],
+    links: {
+      source: 'url',
+      demo: 'url',
+    },
+  },
+  {
+    title: 'Digital Linguistics: Lotus (IN-PROGRESS)',
+    desc: `The Lotus webapp will allow linguists studying any sort of language an easy way to organize and share all of their data, including lexicons,
+           phonemic inventories, phonological rules, and much more. Right now the focus is on Algonquian languages because of our partnership with Monica Macaulay
+           from the UW-Madison linguistics department, but the goal is for this app to eventually support all sorts of languages from all over the world`,
+    img: [image, image, image],
+    links: {
+      source: 'url',
+      demo: 'url',
+    },
   },
 ]
 
@@ -73,7 +111,7 @@ export default class About extends React.Component {
     }
     return (
       <Page name='/projects'>
-        <GridList>
+        <GridList cellHeight={250}>
           {tiles}
         </GridList>
         <ProjectModal open={this.state.open} onClose={this.handleClose} project={this.state.project}/>
