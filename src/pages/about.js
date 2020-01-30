@@ -19,7 +19,7 @@ export default class About extends React.Component {
   render() {
     return (
       <Page name='/about'>
-        <GridList>
+        <GridList  spacing={50}>
           <GridListTile rows={2}>
             <Typography variant='h3' paragraph>
               About Me:

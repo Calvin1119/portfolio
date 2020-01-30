@@ -59,6 +59,9 @@ export default class Resume extends React.Component {
                     <li>C++</li>
                     <li>React</li>
                     <li>ROS</li>
+                    <li>CI/CD</li>
+                    <li>Git</li>
+                    <li>Agile Development</li>
                   </ul>
                 </Typography>
               </CardContent>
@@ -67,11 +70,11 @@ export default class Resume extends React.Component {
           <Grid item xs={4}>
             <Card raised>
               <CardContent>
-                <Typography variant='h5'>
+                <Typography variant='h5' paragraph>
                   Rishi Publishing:
                 </Typography>
-                <Typography variant='body1'>
-                  a.sljdfasldas
+                <Typography variant='body1' paragraph>
+                  Prototyped/designed several web apps for interactive scientific paper publishing
                 </Typography>
               </CardContent>
             </Card>
@@ -79,11 +82,14 @@ export default class Resume extends React.Component {
           <Grid item xs={4}>
             <Card raised>
               <CardContent>
-                <Typography variant='h5'>
+                <Typography variant='h5' paragraph>
                   Algonquian Database Project:
                 </Typography>
-                <Typography variant='body1'>
-                  asjdf;asdf;jasjd;f
+                <Typography variant='body1' paragraph>
+                  Designed/maintained a specification for the digital storage of linguistic data with a small team
+                </Typography>
+                <Typography variant='body1' paragraph>
+                  Built an open-source frontend application to allow linguists to easily store/analyze data on endangered languages (IN-PROGRESS)
                 </Typography>
               </CardContent>
             </Card>
@@ -91,17 +97,17 @@ export default class Resume extends React.Component {
           <Grid item xs={4}>
             <Card raised>
               <CardContent>
-                <Typography variant='h5'>
+                <Typography variant='h5' paragraph>
                   Wisconsin Autonomous:
                 </Typography>
-                <Typography variant='body1'>
-                  ;lskadjf;asjdfas
+                <Typography variant='body1' paragraph>
+                  Collaborated with a large team to build an autonomously driving go-cart, mainly focusing on the real time systems pipeline
                 </Typography>
               </CardContent>
             </Card>
           </Grid>
         </Grid>
-        <Button>
+        <Button style={{paddingTop: 25, float: 'right'}}>
           Download Paper Version
         </Button>
       </Page>

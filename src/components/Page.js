@@ -24,7 +24,6 @@ export default class Page extends React.Component {
         <Container style={{paddingTop: '40px'}}>
           {this.props.children}
         </Container>
-        <ThemeToggle />
       </React.Fragment>
     )
   }
