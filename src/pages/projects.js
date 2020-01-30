@@ -73,6 +73,17 @@ const projects = [
       demo: 'url',
     },
   },
+  {
+    title: 'This Portfolio',
+    desc: `You're looking at it right now! I'm very used to working with a team or for a client, but making something for your own purposes has its own set of
+           required skills. You don't have to follow anyone's expectations or design but your own, which is sometimes freeing and sometimes nerve wracking.
+           This website is made in React, using the Material UI library, with Gatsby for the backend.`,
+    img: [image, image, image],
+    links: {
+      source: 'url',
+      demo: 'url',
+    },
+  },
 ]
 
 export default class About extends React.Component {
@@ -89,7 +100,7 @@ export default class About extends React.Component {
     this.setState({open: true, project: proj})
   }
   handleClose() {
-    this.setState({open: false})
+    this.setState({open: false, project: null})
   }
   render() {
     const tiles = []
