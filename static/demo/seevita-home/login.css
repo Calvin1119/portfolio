@@ -1,0 +1,100 @@
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #f2f4f6;
+}
+
+#modal {
+  position: absolute;
+  width: 30%;
+  height: 75%;
+  top: 12%;
+  left: 35%;
+  background-color: white;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.66);
+}
+
+#logo {
+  display: block;
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#selectorbox {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  height: 10%;
+  /* border-bottom: 1px solid lightgray; */
+}
+
+p {
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.22;
+  letter-spacing: normal;
+  color: #5a5a5a;
+}
+
+.active {
+  color: #407abd;
+  border-bottom: 1px solid #407abd;
+}
+
+#content {
+  height: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+form {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  height: 50px;
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.22;
+  letter-spacing: normal;
+  color: #302e2e;
+  border: none;
+}
+
+input[type=text], input[type=password] {
+  border-bottom: 1px dashed #407abd;
+  margin-bottom: 45px;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  border-bottom: 2px solid #407abd;
+  outline: none;
+}
+
+input[type=submit] {
+  border-radius: 4px;
+  color: white;
+  background-color: #207d84;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.19;
+  letter-spacing: 0.8px;
+}

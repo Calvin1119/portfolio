@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+
+  <head>
+    <meta charset="utf-8"/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500|Roboto:300,400,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/zlj0agp.css">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <title>SeeVita Homepage</title>
+  </head>
+  <body>
+    <div id="landing">
+      <div id="toolbar" class="flexcontainer">
+        <!--VVV Logo is here VVV
+        <img src="assets/Group 73.svg" style="height: 40px">
+          -->
+        <div class="flexcontainer">
+          <a class="toolbtn" href="login.html?state=signup">
+            SIGN UP
+          </a>
+          <div style="width: 40px"></div>
+          <a class="toolbtn" href="login.html?state=login">
+            LOG IN
+          </a>
+        </div>
+      </div>
+      <div class="flexcontainer" style="padding-top: 5%; padding-bottom: 8%; width: 80%; margin: auto;">
+        <div id="splashtxtbox">
+          <div id="title">
+            SITES FOR SCHOLARS
+          </div>
+          <!-- <hr style= "color: #f6cfc8"> -->
+
+
+          <p id="splashtxt">
+            SeeVita helps scholars publish websites <br> that show and tell with visual biographies, multimedia CVs, and interactive blogging
+          </p>
+          <button id="signup" onclick="window.location.href = 'https://pub.us20.list-manage.com/subscribe?u=954c7aa9230eda5e7bbe26727&id=e1752f7664'">
+            Sign up
+          </button>
+        </div>
+
+       <!-- <img src="assets/seevita-banner-new.svg" style="position: relative; left: 17%; height: 560px;">
+        -->
+
+      </div>
+    </div>
+    <div style="background-color: #fef7ed; padding: 0px; margin: 0px; display: inline-block; width: 100%; min-height: 100%;">
+      <div id="carouselpg" class="page">
+        <h1 id="carouseltitle" style="width: 100%; text-align: center; padding-bottom: 5%;">Create and publish an open, multimedia CV</h1>
+        <div class="flexcontainer" style="justify-content: space-around;">
+          <img id="carousel">
+          <div style="width: 300">
+            <div id="carouseltxt">
+              Preview
+            </div>
+            <br>
+            <div style="display: flex; flex-direction: column;">
+              <a class="carouselbtn" onclick="changeState(0)">about</a>
+              <a class="carouselbtn" onclick="changeState(1)">papers</a>
+              <a class="carouselbtn" onclick="changeState(2)">talks</a>
+              <a class="carouselbtn" onclick="changeState(3)">posters</a>
+
+              <a class="carouselbtn" onclick="changeState(4)">teach</a>
+              <a class="carouselbtn" onclick="changeState(5)">skills</a>
+              <a class="carouselbtn" onclick="changeState(6)">services</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page">
+
+    <h1 id="principlehead">Principles</h1>
+        <div class = "value-propositions" >
+
+      <img src="assets/rishi-aesthetic.svg" class="plogo" style="position: relative; right: 35%; max-width: 100%;">
+        <div>
+          <h2 class="principletitle">nudging openness</h2>
+          <p class="principletxt">
+            SeeVita encourages users to directly embed and scholarly papers, talks, posters, and more
+          </p>
+        </div>
+
+        <div>
+          <h2 class="principletitle" style="text-align: left">prioritizing usefulness</h2>
+          <p class="principletxt" style="text-align: left">
+            clean design and modern features prioritize readability and usefulness
+          </p>
+        </div>
+        <img src="Group 680.svg" class="plogo" style="margin-left: auto; margin-right: auto;" >
+
+        <img src="Group 681.svg" class="plogo">
+        <div>
+          <h2 class="principletitle">sharing and evolving</h2>
+          <p class="principletxt">
+              open-source templates allow scholars to help modify and share, evolving this scholarly community
+          </p>
+        </div>
+      </div>
+
+
+    </div>
+    <div style="background-color: #fef7ed">
+      <div class="page" style="position: relative; padding-top: 25px;">
+        <h1 id="timelinetitle">Coming soon</h1>
+        <img src="assets/Group 682.svg" style="width: 125%; position: relative; right: 15%;"></img>
+        <div class="flexcontainer" style="align-items: flex-start;">
+          <div class="roadmapblock" style="position: relative; right: 1.3%; bottom: 35px;">
+            <h3 class="roadmaptitle">2019 - summer</h3>
+            <p class="roadmaptxt">
+              autoupdate your CV<br>
+              publish a biography
+            </p>
+          </div>
+          <div class="roadmapblock" style="position: relative; right: 3.5%; bottom: 35px;">
+            <h3 class="roadmaptitle">2019 - fall</h3>
+            <p class="roadmaptxt">
+              compose complete personal website
+            </p>
+          </div>
+          <div class="roadmapblock" style="position: relative; right: 10.5%; bottom: 35px;">
+            <h3 class="roadmaptitle">2020 - onward</h3>
+            <p class="roadmaptxt">
+              author dynamic blogs with simulations
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="formpage">
+      <div style="display: flex; flex-direction: column; justify-content: space-evenly; align-items: center; width: 100%; padding: 30px;">
+        <div id="formtitle"> Get Early Access</div>
+        <form id="signupform" onsubmit="handleSignup(); return false;">
+          <input type="text" name="firstname" placeholder="first name">
+          <input type="text" name="lastname" placeholder="last name">
+          <input type="text" name="email" placeholder="work email">
+          <button id="signup" style="width: 100%; color: #123659";>Keep me updated</button>
+        </form>
+      </div>
+    </div>
+  </body>
+  <footer>
+    <div style="display: flex; flex-direction: column; align-items: flex-start; justify-content: space-around; height: 300px; width: 30%; margin: auto; position: relative; left: 4%; padding-top: 70px; padding-bottom: 70px;">
+      <div id="footertitle">Contact us</div>
+      <div class="flexcontainer">
+
+
+        <img src="assets/Group 688.svg"></img>
+        <div class="footertxt">follow <a href="https://twitter.com/rishihq?lang=en"> @rishiHQ</a></div>
+      </div>
+      <div class="flexcontainer">
+        <img src="assets/Group 689.svg"></img>
+        <div class="footertxt">email <a href="mailto:jay@rishi.pub"> jay@rishi.pub</a></div>
+      </div>
+      <div class="flexcontainer">
+        <img src="assets/Group 690.svg"></img>
+        <div class="footertxt">visit our office in <a href="https://goo.gl/maps/HSKpFfSSGpVZE2je6"> USA</a></div>
+      </div>
+      <div style="border-top: 2px solid #123659; padding-left: 0;" class="footertxt">Rishi Technologies · © 2019</div>
+    </div>
+    <script>
+      var carState = 0;
+      const carButtons = document.getElementsByClassName('carouselbtn');
+      const car = document.getElementById('carousel');
+      const images = [
+        'assets/preview-carousel-about.jpg',
+        'assets/preview-carousel-papers.jpg',
+        'assets/preview-carousel-talks.jpg',
+        'assets/preview-carousel-posters.jpg',
+        'assets/preview-carousel-teach.jpg',
+        'assets/preview-carousel-skills.jpg',
+        'assets/preview-carousel-services.jpg',
+      ];
+      carButtons[carState].classList.add("active");
+      car.src = images[carState];
+
+      function changeState(s) {
+        carButtons[carState].classList.remove("active");
+        carState = s;
+        carButtons[s].classList.add("active");
+
+        car.src = images[carState];
+      }
+
+      const form = document.getElementById('signupform')
+      const signuplink = 'https://pub.us20.list-manage.com/subscribe?u=954c7aa9230eda5e7bbe26727&id=e1752f7664';
+      function handleSignup() {
+        var url = signuplink;
+        url += "&MERGE0=" + signupform.elements[2].value;
+        url += "&MERGE1=" + signupform.elements[0].value;
+        url += "&MERGE2=" + signupform.elements[1].value;
+        window.location.href = url;
+      }
+    </script>
+  </footer>
+</html>

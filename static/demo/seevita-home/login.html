@@ -1,0 +1,76 @@
+<html lang="en">
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="login.css">
+    <title>SeeVita Login</title>
+  </head>
+  <body>
+    <img src="assets/Group 686.svg" onclick="window.location.href = 'index.html'" style="position: absolute; top: 20px; right: 20px">
+    <div style="height: 50%; background-color: #123659"></div>
+    <div id="modal">
+      <div id="selectorbox">
+        <p>
+          log in
+        </p>
+        <div style="width: 20px"></div>
+        <p>
+          sign up
+        </p>
+      </div>
+      <img src="assets/Group 652.svg" id="logo">
+      <div id="content"></div>
+    </div>
+  </body>
+  <footer>
+    <script>
+      const buttons = document.getElementsByTagName('p');
+      const content = document.getElementById('content');
+      const url = new URL(window.location.href);
+
+      const loginString =
+      '<form id="login">\
+        <input type="text" name="email" placeholder="email">\
+        <input type="password" name="password" placeholder="password">\
+        <input type="submit" name="submit" value="LOG ME IN">\
+      </form>\
+      <div style="display: flex; flex-direction: row; justify-content: space-evenly; width: 100%;">\
+        <img src="assets/NoPath.svg">\
+        <img src="assets/NoPath - Copy (35).svg">\
+        <img src="assets/NoPath - Copy (31).svg">\
+        <img src="assets/NoPath - Copy (20).svg">\
+      </div>\
+      <p>\
+        forgot login?\
+      </p>';
+
+      const signupString =
+      '<form id="signup">\
+        <input type="text" name="firstname" placeholder="first name">\
+        <input type="text" name="lastname" placeholder="last name">\
+        <input type="text" name="email" placeholder="email">\
+        <input type="password" name="password" placeholder="password">\
+        <input type="submit" name="submit" value="SIGN ME UP">\
+      </form>';
+
+      if (url.searchParams.get('state') === 'login')
+        setLogin();
+      else
+        setSignup();
+
+      function setLogin() {
+        buttons[1].classList.remove('active');
+        buttons[0].classList.add('active');
+        buttons[1].addEventListener('click', setSignup);
+        content.innerHTML = loginString;
+      }
+      function setSignup() {
+        buttons[0].classList.remove('active');
+        buttons[1].classList.add('active');
+        buttons[0].addEventListener('click', setLogin);
+        content.innerHTML = signupString;
+      }
+    </script>
+  </footer>
+</html>
