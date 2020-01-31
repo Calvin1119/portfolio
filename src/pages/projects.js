@@ -25,6 +25,7 @@ import svhome2 from '../img/SVHome-02.png'
 import svhome3 from '../img/SVHome-03.png'
 import svhome4 from '../img/SVHome-04.png'
 import svhome5 from '../img/SVHome-05.png'
+import svhome6 from '../img/SVHome-06.png'
 
 import seevita1 from '../img/SeeVita-01.png'
 import seevita2 from '../img/SeeVita-02.png'
@@ -50,18 +51,18 @@ const projects = [
            This concept would later be expanded on in the SeeVita project.`,
     img: [embedmod1, embedmod2, embedmod3],
     links: {
-      source: 'url',
-      demo: 'url',
+      source: 'https://github.com/metascience-design-lab/scisims/blob/media-switching-brock/demo/index_EFdynamic.html',
+      demo: 'demo/index_EFdynamic.html',
     },
   },
   {
     title: 'Rishi: SeeVita Homepage',
     desc: `This was my first foray into traditional web design. This was just a simple website for the SeeVita project, but I'm very happy with how it turned out.
            In particular, the back and forth process of making changes, seeing how the changes were recieved by the client, and moving forward was quite a valueable experience.`,
-    img: [svhome1, svhome2, svhome3, svhome4, svhome5],
+    img: [svhome1, svhome2, svhome3, svhome4, svhome5, svhome6],
     links: {
       source: 'url',
-      demo: 'url',
+      demo: 'demo/seevita-home/index.html',
     },
   },
   {
