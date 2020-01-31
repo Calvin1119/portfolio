@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>SeeVita Article</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900|Roboto:100,300,400,500,700,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.6.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.0.0-beta.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@5.1.2"></script>
+  </head>
+  <body>
+    <div id='toolbar'>
+
+    </div>
+    <div id='title-box'>
+      <h1>Are Machines Better at Designing Practice Problems than Humans?</h1>
+      <h2>An application of machine teaching to chemestry education</h2>
+    </div>
+    <div class='figure-container'>
+      <iframe src="sims/abstract/abstract.html" class="figure" style='float:middle; height: 600px'></iframe>
+    </div>
+    <div class='byline-container'>
+      <div class='byline-cell'>
+        <h3 class='byline-title'>AUTHOR</h3>
+        <div class='byline-item'>Ayon Sen</div>
+        <div class='byline-item'>Purav Patel</div>
+        <div class='byline-item'>Martina Rau</div>
+        <div class='byline-item'>Black Mason</div>
+        <div class='byline-item'>Rob Nowak</div>
+        <div class='byline-item'>Xiaojin Zhu</div>
+      </div>
+      <div class='byline-cell'>
+        <h3 class='byline-title'>AFFILIATION</h3>
+        <div class='byline-item'>University  of Wisconsin - Madison</div>
+      </div>
+      <div class='byline-cell'>
+        <h3 class='byline-title'>PUBLISHED</h3>
+        <div class='byline-item'>19 November 1998</div>
+      </div>
+      <div class='byline-cell'>
+        <h3 class='byline-title'>DOI</h3>
+        <div class='byline-item'>10.23915/distill.00017</div>
+      </div>
+    </div>
+    <hr>
+    <div class='body-paragraph'>
+      <p class='paragraph-text'>
+        Max sits at a lunch table, multitasking by eating and reviewing for an upcoming chemistry exam. He’s not taking it because of an overwhelming enthusiasm for the subject, it’s just a required class for graduation.They’re going over Lewis dot diagrams in class today. Max is able to understand the concepts fairly well, but it takes him more time to complete the problems than his classmates. He’s unable to finish the assignment before class is over, so he resigns himself to adding the rest to his ever growing mound of homework.
+      </p>
+    </div>
+    <div class='body-paragraph'>
+      <h2 class='body-heading'>Introduction</h2>
+      <p class='paragraph-text'>
+        Visuals are used in subjects like science, technology, engineering, and math (STEM). For example, chemistry lessons on bonding typically includes the visuals shown in Figure 1. While we usually assume that these visuals help students learn because they make abstract concepts clearer, they can also harm students’ learning if students do not know how the visuals show information. To learn from visuals, students need representational competencies — knowledge about how visual representations show information. For example, a chemistry student needs to learn that the dots in the Lewis structure (Figure 1a) show electrons and that the spheres in the space-filling model (Figure 1b) show areas where electrons may live.
+      </p>
+    </div>
+    <div class='figure-container'>
+      <img src="assets/Water_Rep.png" alt="Two representations of a water molecule" class="figure"></img>
+      <p class='caption'>
+        Figure 1: Two common visual representations of water (a: Lewis structure; b: space-filling model).
+      </p>
+    </div>
+    <div class='body-paragraph'>
+      <p class='paragraph-text'>
+        Lessons that help students learn representational competencies mostly focuse on conceptual representational competencies. These include the ability to connect visual features to concepts, support conceptual reasoning with visuals, and choose the right visuals to illustrate a given concept. Less research has focused on a second type of representational competency — perceptual fluency. This is the ability to quickly and effortlessly see meaningful information in visuals. For example, chemists can effortlessly see that both visuals in Figure 1 show water. Perceptual fluency plays an important role in students’ learning because it frees mental energy for more complex reasoning. This allows students to learn from visuals.
+      </p>
+      <p class='paragraph-text'>
+        Students get perceptual fluency through learning processes that are implicit and inductive. To understand this, think about the the way you learned your first language. You didn't need to effortfully think about the grammatical rules. Instead, you got a "feel" for the rules (implicit learning) that came from many learning opportunities (inducing process). Because of this, it is thought that perceptual fluency should be taught by giving students many simple tasks in which they must quickly judge what a visual shows. For example, a perceptual fluency task may ask students to quickly and intuitively judge whether two visuals like the ones in Figure 1 show the same molecule. They ask students to rely on implicit intuitions. The problem sequence is typically chosen so that (1) students are exposed to a variety of visuals and (2) consecutive visuals vary irrelevant features while drawing attention to relevant features.
+      </p>
+      <p class='paragraph-text'>
+        However, these general guidelines leave many possible sequences open. So far, we do not have a principle-based way of identifying the best problem sequences. In our study, we used a created a computer model of how undergraduates learn to solve perceptual fluency problems in chemistry. Then, we had a computer algorithm teach the first model. Finally, we took the problem sequence that worked best for the model and gave it to real humans on the Internet. We found that the sequence of chemistry visuals (practice problems) created by the machine was better for learning than a random problem sequence and a sequence generated by a human expert who knew about chemistry and perceptual learning.
+      </p>
+      <h2 class='body-heading'>Perceptual Fluency</h2>
+      <p class='paragraph-text'>
+        Representations used when teaching are defined as external representations because they are external or outside of the viewer. By contrast, internal representations are mental objects that students can imagine and mentally manipulate. External representations can be symbolic like the text in a book or visual like Lewis structures in chemistry.
+      </p>
+      <p class='paragraph-text'>
+        Perceptual fluency research is based on findings that experts like doctors and pilots can automatically see meaningful connections among representations, that it takes them little cognitive effort to translate among representations, and that they can quickly and effortlessly mix information distributed across representations. For example, chemists can see at a glance that the Lewis structure in Figure 1A shows the same molecule as the space-filling model in Figure 1B. This kind of perceptual expertise frees up cognitive resources for more complex reasoning.
+      </p>
+      <p class='paragraph-text'>
+        According to two learning theories, perceptual fluency involves building accurate internal representations of visuals and connecting them to each other.
+      </p>
+      <p class='paragraph-text'>
+         Cognitive science suggests that students get perceptual fluency by perceptual induction processes. Here, inductive means that students can figure out how visual properties relate to concepts through practice. Students become better at seeing meaning in visuals by treating each visual feature property as one perceptual chunk that relates to multiple concepts (perceptual chunking). Perceptual induction processes are thought to be nonverbal happen unconsciously.
+      </p>
+      <p class='paragraph-text'>
+        Lessons that target perceptual fluency are fairly new. Some researchers have created math and science lessons in which students translate between different visuals quickly. In our chemistry study, students judged whether two visuals like the ones shown in Figure 1 show the same molecule. Students would get dozens of problems like these in a row. These interventions can raise test scores even if the problems are a bit different from the problems used during the lesson.
+      </p>
+      <p class='paragraph-text'>
+        Perceptual learning depends on the practice sequence. To design good sequences, tasks should give students a variety of problems so that irrelevant features vary but relevant features are constant across several tasks. But we know that visuals differ from each other in many ways. So there are many possible sequences that could vary visual features. To address this problem, we used a new computer science approach called machine teaching.
+      </p>
+      <h2 class='body-heading'>Machine Teaching Procedure</h2>
+      <p class='paragraph-text'>
+        Machine teaching is a computer science technique in which a computer algorithm helps improve human learning. We took the following steps.
+      </p>
+      <ol class='paragraph-text'>
+        <li>In a learning experiment, we ran an experiment to figure out how real human students relate different visuals like the two molecules above (Figure 1). </li>
+        <li>From that data, we created a cognitive model of chemistry visual learning. This model was a step-by-step problem-solving procedure called an algorithm. </li>
+        <li>We used an algorithm to find an optimal machine-generated problem sequence. </li>
+        <li>The machine-generated sequence was used to teach the cognitive model and predict learning. </li>
+        <li>On the Internet, we tested all three sequences (machine, human expert, random) with actual humans. </li>
+      </ol>
+      <p class='paragraph-text'>
+        Which problem sequence is best for learning? We wondered whether an algorithm run by a machine could improve learning beyond a random problem sequence and a sequence created by a human expert.
+      </p>
+      <h2 class='body-heading'>Step 1: How do Humans Learn to Map Visuals?</h2>
+      <p class='paragraph-text'>
+        First, we needed to train a learning algorithm that behaved like real humans on perceptual learning lessons. To do that, we ran a small experiment. We compared the learning algorithm’s predictions to humans' test scores. In our pilot experiment, we recruited 47 undergraduate chemistry students. They were randomly assigned to two conditions using random problem sequences -- training with feedback or training without feedback.
+      </p>
+      <p class='paragraph-text'>
+        Perceptual fluency problems ask students to make simple perceptual judgments. In our case, students were given two images. One image was of a molecule represented by a Lewis structure and the other image was a molecule represented by a space-filling model. Students judged whether or not the two images show the same molecule.
+      </p>
+    </div>
+    <div class='figure-container'>
+      <img src="assets/random_training.gif" class="figure"></img>
+      <p class='caption'>
+      </p>
+    </div>
+    <div class='body-paragraph'>
+      <h2 class='body-heading'>Step 2: Cognitive Model of Human Learning</h2>
+      <p class='paragraph-text'>
+        Now, we describe how we created the cognitive model of how humans learn with chemistry visuals. To do this, we describe the:
+      </p>
+      <ul class='paragraph-text'>
+        <li>perceptual fluency tasks and how we represent them precisely </li>
+        <li>learning algorithm used by the cognitive model of human learning </li>
+      </ul>
+      <h3 class='body-subheading'>A - Describing Molecules to Computers</h3>
+      <p class='paragraph-text'>
+        In our experiment, we used visual representations of chemical molecules common in undergraduate classes. To find these molecules, we reviewed textbooks and web-based content. We listed the frequency of different molecules using their chemical names (e.g., H2O) and chose the 142 most common molecules. To precisely describe the visual representations, we counted visual features like the number of lines or dots in the Lewis structure and the colors of spheres in the space-filling models. This allowed us to create lists of visual properties called feature vectors. Each molecule had a feature vector that described its visual features Feature vectors of Lewis structures had 27 features. Feature vectors of space-filling models had 24 features. These feature vectors were used by the learning algorithm.
+      </p>
+    </div>
+    <div class='figure-container'>
+      <img src="assets/Lewis_SF_features.png" class="figure"></img>
+      <p class='caption'>
+      </p>
+    </div>
+    <div class='body-paragraph'>
+      <h3 class='body-subheading'>B - A Learning Algorithm Behaving Like Humans</h3>
+      <p class='paragraph-text'>
+        Our learning algorithm plugged in the two molecules (Lewis structure and space-filling model) as inputs in the form of feature vectors. It was important to represent the molecules as feature vectors because this translates the visual information to a "language" that software can understand.
+      </p>
+      <p class='paragraph-text'>
+        Given these feature vectors as inputs, the learning algorithm was able to place them in the same "world". This world is the golden vector space. It can be thought of as a coordinate plane similar to the one in which you would place the points (0,4) and (9,3). Just as the distance between two points in a coordinate plane can be calculated using the distance formula, the distance between two molecules can also be calculated. The distance between two molecules represents their similarity. Two similar molecules will be very close together in the golden vector space and two dissimilar molecules will be far apart. Next, we calculate the probability that the two molecules were the same. When given the correct answer, the algorithm updated itself. Over many opportunities, this allows the algorithm to learn.
+      </p>
+      <h2 class='body-heading'>Step 3: Find the Best Problem Sequence</h2>
+      <p class='paragraph-text'>
+        Our first problem was to consider the length of the problem sequences. Should we create sequences of 50 problems? Or 100? Searching over all possible sequences would be too complex for most computers. We settled on 60 as the length of the problem sequence because this was closest to other studies.
+      </p>
+      <p class='paragraph-text'>
+        Finding the best problem sequence was a computationally tough problem. For each problem in the 60-problem sequence, there could be 5,041 possible options. This means that there were 504160 or 1.4 * 10222 possible sequences. We can not hope to find the "best" or optimal sequence. So we settle for a sup-optimal or "good enough" sequence.
+      </p>
+      <p class='paragraph-text'>
+        The algorithm that searchs for a suboptimal solution is called a modified hill climbining algorithm. We consider a landscape with different training sets scattered about. We begin by looking at a random random set and checking its neighbors. If the neighboring problem sequences result in better learning for the cognitive model, we move to the better training set.
+      </p>
+      <h2 class='body-heading'>Step 4: Teaching the Best Problem Sequence to the Cognitive Model</h2>
+      <p class='paragraph-text'>
+        We continued this process until no better neighbors are found. Because of computer limits, we only checked 500 neighbors of a particular training set. The problem sequence that remained was our solution -- the machine-generated problem sequence.
+      </p>
+      <h2 class='body-heading'>Step 5: Testing All Three Sequences in a Human Internet Experiment</h2>
+      <p class='paragraph-text'>
+        To find out whether the machine problem sequence is best for learning, we ran a randomized experiment with humans on the Internet.
+      </p>
+      <h3 class='body-subheading'>Participants</h3>
+      <p class='paragraph-text'>
+        We recruited 368 participants using Amazon’s Mechanical Turk (MTurk). Of these, 216 were male and 131 were female. The rest did not report their sex. Most participants (86%) were below the age of 45.
+      </p>
+      <h3 class='body-subheading'>Experimental Design</h3>
+      <p class='paragraph-text'>
+        We compared three training conditions. In the machine training sequence condition, we used the problem sequence found by the search algorithm.
+      </p>
+      <p class='paragraph-text'>
+        Participants judged whether the two molecules were the same and received feedback. In the condition using the human expert sequence, the training set was constructed by an expert in perceptual learning and chemistry.
+      </p>
+      <p class='paragraph-text'>
+        In the random training sequence condition, each problem was randomly created.
+      </p>
+    </div>
+    <div class='figure-container'>
+      <img src="assets/random_training.gif" class="figure"></img>
+      <p class='caption'>
+      </p>
+    </div>
+    <div class='body-paragraph'>
+      <h3 class='body-subheading'>Procedure</h3>
+      <p class='paragraph-text'>
+        We hosted the experiment online. Participants first received a brief description of the study and then completed a sequence of 126 judgment problems (yes or no). Tasks were divided into three phases. Phase one was the pretest and it included 20 test problems without feedback. Phase two was for training and it included 60 training problems with correctness feedback. We assumed that participants learned during this phase. Phase three was the posttest with 40 test problems displayed without feedback.
+      </p>
+      <p class='paragraph-text'>
+        In addition, one guard task was inserted after every 19 tasks throughout all three phases. A guard question either showed two perfectly identical molecules shown by the same representation or two highly dissimilar molecules shown by Lewis structures. We used these easy guard questions to filter out participants who randomly clicked through the tasks. We ignored the guard tasks during modeling. When the images of the two molecules were shown to participants, the position (left or right) was randomized so that no representation was on one side more often.
+      </p>
+      <h2 class='body-heading'>Results</h2>
+      <p class='paragraph-text'>
+        Of the 368 participants, we filtered out 43 participants who failed any of the guard questions. The final sample size was 325. The final number of participants in the conditions random, human, and machine training sequence were 108, 117 and 100 respectively.
+      </p>
+    </div>
+    <div class='figure-container' id='vis-figure'>
+      <div id='vis-container'>
+        <div id='results-vis'></div>
+        <div id='vis-buttons'>
+          <div>
+            <span class='vis-button' onClick='show("ridgeline")'>
+              <img class='button-icon' src='assets/mountain.svg'>
+              Ridgeline
+            </span>
+            <span class='vis-button' onClick='show("box")'>
+              <img class='button-icon' src='assets/box-plot.svg'>
+              Box
+            </span>
+            <span class='vis-button'  onClick='show("table")'>
+              <img class='button-icon' src='assets/table-for-data.svg'>
+              Table
+            </span>
+            <span class='vis-button'  onClick='show("dot")'>
+              <img class='button-icon' src='assets/scatter.svg'>
+              Dot
+            </span>
+          </div>
+          <div>
+            <a href='assets/summary_mturk_data.csv'>
+              <span class='vis-button'>
+                <img class='button-icon' src='assets/download.svg'>
+              </span>
+            </a>
+            <span class='vis-button' onClick="fullscreen()">
+              <img class='button-icon' id='fs-icon' src='assets/fullscreen.svg'>
+            </span>
+          </div>
+        </div>
+        <p class='caption' style='padding-top: 25px;'>
+        </p>
+      </div>
+      <script type="text/javascript">
+        const step = 47;
+        const overlap = 2;
+        const ridge = {
+          data: {
+            url: "assets/summary_mturk_data.csv",
+          },
+          transform: [
+            {filter: "datum.guard_error == 0"},
+            {calculate: '1-datum.pretest_error', as: 'Pretest'},
+            {calculate: '1-datum.train_error', as: 'Training'},
+            {calculate: '1-datum.posttest_error', as: 'Posttest'},
+            {fold: ['Pretest', 'Training', 'Posttest'], as: ['phase', 'acc']},
+          ],
+          facet: {
+            row: {
+              field: 'condition',
+              type: 'nominal',
+              header: {
+                title: null,
+                labelFontSize: 20,
+              }
+            },
+          },
+          spec: {
+            facet: {
+              row: {
+                field: 'phase',
+                type: 'nominal',
+                sort: ['Pretest', 'Training', 'Posttest'],
+                header: {
+                  title: null,
+                  labelFontSize: 0,
+                },
+              },
+            },
+            spec: {
+              transform: [
+                {density: 'acc', groupby: ['phase'], extent: [0.2, 1]},
+              ],
+              mark: {
+                type: 'line',
+                strokeWidth: 1,
+              },
+              encoding: {
+                x: {
+                  field: 'value',
+                  type: 'quantitative',
+                  title: null,
+                  axis: {
+                    format: ".0%",
+                    labelFontSize: 20,
+                    grid: false,
+                  },
+                },
+                y: {
+                  field: 'density',
+                  type: 'quantitative',
+                  scale: {
+                    range: [step, -overlap * step],
+                  },
+                  axis: null,
+                },
+                stroke: {
+                  field: 'phase',
+                  type: 'nominal',
+                  sort: ['Pretest', 'Training', 'Posttest'],
+                },
+                fill: {
+                  field: 'phase',
+                  type: 'nominal',
+                  sort: ['Pretest', 'Training', 'Posttest'],
+                  legend: null,
+                },
+              },
+              width: 800,
+              height: step,
+            },
+            bounds: 'flush',
+            spacing: 0,
+            padding: 0,
+          },
+          config: {
+            view: {
+              stroke: null
+            },
+          },
+        }
+        const box = {
+          data: {
+            url: "assets/summary_mturk_data.csv",
+          },
+          transform: [
+            {filter: "datum.guard_error == 0"},
+            {calculate: '1-datum.pretest_error', as: 'Pretest'},
+            {calculate: '1-datum.train_error', as: 'Training'},
+            {calculate: '1-datum.posttest_error', as: 'Posttest'},
+            {fold: ['Pretest', 'Training', 'Posttest'], as: ['phase', 'acc']},
+          ],
+          width: 800,
+          height: 250,
+          mark: {
+            type: "boxplot",
+            extent: "min-max",
+            median: {
+              color: "black",
+            }
+          },
+          encoding: {
+            x: {
+              field: 'acc',
+              type: 'quantitative',
+              title: null,
+              scale: {domain: [0.2, 1]},
+              axis: {
+                format: ".0%",
+                grid: false,
+                gridColor: "white",
+              },
+            },
+            y: {
+              field: 'phase',
+              type: 'ordinal',
+              sort: ['pre', 'train', 'post'],
+              axis: {
+                labels: false,
+              },
+            },
+            color: {
+              field: 'phase',
+              type: 'nominal',
+              sort: ['Pretest', 'Training', 'Posttest'],
+            },
+            tooltip: null,
+            row: {
+              field: 'condition',
+              type: 'ordinal',
+              title: null,
+              header: {
+                labelFontSize: 20,
+              },
+            },
+            size: {value: 50},
+          },
+          config: {
+            axis: {
+              title: null,
+              labelFontSize: 20,
+              domainOpacity: 0,
+            },
+            facet: {
+              view: {
+                stroke: null,
+              }
+            }
+          },
+        }
+        const dot = {
+          data: {
+            url: "assets/summary_mturk_data.csv",
+          },
+          transform: [
+            {filter: "datum.guard_error == 0"},
+            {calculate: '1-datum.pretest_error', as: 'Pretest'},
+            {calculate: '1-datum.train_error', as: 'Training'},
+            {calculate: '1-datum.posttest_error', as: 'Posttest'},
+            {fold: ['Pretest', 'Training', 'Posttest'], as: ['phase', 'acc']},
+          ],
+          facet: {
+            row: {field: "condition", type: "ordinal", title: null, header: {labelFontSize: 20}},
+            title: null,
+          },
+          spec: {
+            layer: [
+              {
+                mark: {
+                  type: "errorbar",
+                  ticks: true,
+                },
+                width: 800,
+                height: 250,
+                encoding: {
+                  x: {
+                    field: 'acc',
+                    type: 'quantitative',
+                    title: null,
+                    scale: {domain: [0.2, 1]},
+                    axis: {
+                      format: ".0%",
+                      grid: false,
+                    },
+                  },
+                  y: {
+                    field: 'phase',
+                    type: 'ordinal',
+                    sort: ['pre', 'train', 'post'],
+                    axis: {
+                      labels: false,
+                    },
+                  },
+                  color: {
+                    field: 'phase',
+                    type: 'nominal',
+                    sort: ['Pretest', 'Training', 'Posttest'],
+                  },
+                  tooltip: null,
+                },
+              },
+              {
+                mark: {
+                  type: 'point',
+                  filled: true,
+                },
+                encoding: {
+                  x: {
+                    field: 'acc',
+                    type: 'quantitative',
+                    aggregate: 'mean',
+                    title: null,
+                    scale: {domain: [0.2, 1]},
+                    axis: {
+                      format: ".0%",
+                    },
+                  },
+                  y: {
+                    field: 'phase',
+                    type: 'ordinal',
+                    sort: ['pre', 'train', 'post']
+                  },
+                  color: {
+                    field: 'phase',
+                    type: 'nominal',
+                    sort: ['Pretest', 'Training', 'Posttest'],
+                  },
+                },
+              },
+            ],
+          },
+          config: {
+            axis: {
+              title: null,
+              labelFontSize: 20,
+              domainOpacity: 0,
+            },
+            facet: {
+              view: {
+                stroke: null,
+              }
+            },
+          },
+        }
+        function buildTable() {
+          var result = null;
+          var xmlhttp = new XMLHttpRequest();
+          xmlhttp.open("GET", "assets/summary_mturk_data.csv", false);
+          xmlhttp.send();
+          if (xmlhttp.status==200) {
+            result = xmlhttp.responseText;
+            result = result.split("\n");
+          }
+
+          const machine = {
+            pre: {
+              entries: [],
+              min: 0,
+              max: 0,
+              sd: 0,
+              med: 0,
+              mean: 0,
+            },
+            train: {
+              entries: [],
+              min: 0,
+              max: 0,
+              sd: 0,
+              med: 0,
+              mean: 0,
+            },
+            post: {
+              entries: [],
+              min: 0,
+              max: 0,
+              sd: 0,
+              med: 0,
+              mean: 0,
+            },
+          }
+
+          const human = {
+            pre: {
+              entries: [],
+              min: 0,
+              max: 0,
+              sd: 0,
+              med: 0,
+              mean: 0,
+            },
+            train: {
+              entries: [],
+              min: 0,
+              max: 0,
+              sd: 0,
+              med: 0,
+              mean: 0,
+            },
+            post: {
+              entries: [],
+              min: 0,
+              max: 0,
+              sd: 0,
+              med: 0,
+              mean: 0,
+            },
+          }
+
+          const random = {
+            pre: {
+              entries: [],
+              min: 0,
+              max: 0,
+              sd: 0,
+              med: 0,
+              mean: 0,
+            },
+            train: {
+              entries: [],
+              min: 0,
+              max: 0,
+              sd: 0,
+              med: 0,
+              mean: 0,
+            },
+            post: {
+              entries: [],
+              min: 0,
+              max: 0,
+              sd: 0,
+              med: 0,
+              mean: 0,
+            },
+          }
+
+          for (let i = 1; i < result.length; i++) {
+            const split = result[i].split(',');
+
+            if (split.length != 6)
+              continue;
+
+            if (split[5] > 0)
+              continue;
+
+            var category = null;
+            if (split[1] === 'Machine') {
+              category = machine;
+            } else if (split[1] === 'Human Expert') {
+              category = human;
+            } else if (split[1] === 'Random') {
+              category = random;
+            }
+            category['pre']['entries'].push(1 - split[2]);
+            category['train']['entries'].push(1 - split[3]);
+            category['post']['entries'].push(1 - split[4]);
+          }
+
+          computeStats(machine);
+          computeStats(human);
+          computeStats(random);
+
+          return `<table id='vis-table'>
+            <tr>
+              <th></th>
+              <th>N</th>
+              <th></th>
+              <th>Min</th>
+              <th>Avg</th>
+              <th>SD</th>
+              <th>Med</th>
+              <th>Max</th>
+            </tr>
+            <tr>
+              <td colspan="100%"><hr></td>
+            </tr>
+            <tr>
+              <td class='rotate' rowspan='3'><div>Human Expert</div></td>
+              <td class='rotate' rowspan='3'><div>${human['train']['entries'].length}</div></td>
+              <td>Pretest</td>
+              <td>${human['pre']['min']}</td>
+              <td>${human['pre']['mean']}</td>
+              <td>${human['pre']['sd']}</td>
+              <td>${human['pre']['med']}</td>
+              <td>${human['pre']['max']}</td>
+            </tr>
+            <tr>
+              <td>Training</td>
+              <td>${human['train']['min']}</td>
+              <td>${human['train']['mean']}</td>
+              <td>${human['train']['sd']}</td>
+              <td>${human['train']['med']}</td>
+              <td>${human['train']['max']}</td>
+            </tr>
+            <tr>
+              <td>Posttest</td>
+              <td>${human['post']['min']}</td>
+              <td>${human['post']['mean']}</td>
+              <td>${human['post']['sd']}</td>
+              <td>${human['post']['med']}</td>
+              <td>${human['post']['max']}</td>
+            </tr>
+            <tr>
+              <td colspan="100%"><hr></td>
+            </tr>
+            <tr>
+              <td class='rotate' rowspan='3'><div>Machine</div></td>
+              <td class='rotate' rowspan='3'><div>${machine['train']['entries'].length}</div></td>
+              <td>Pretest</td>
+              <td>${machine['pre']['min']}</td>
+              <td>${machine['pre']['mean']}</td>
+              <td>${machine['pre']['sd']}</td>
+              <td>${machine['pre']['med']}</td>
+              <td>${machine['pre']['max']}</td>
+            </tr>
+            <tr>
+              <td>Training</td>
+              <td>${machine['train']['min']}</td>
+              <td>${machine['train']['mean']}</td>
+              <td>${machine['train']['sd']}</td>
+              <td>${machine['train']['med']}</td>
+              <td>${machine['train']['max']}</td>
+            </tr>
+            <tr>
+              <td>Posttest</td>
+              <td>${machine['post']['min']}</td>
+              <td>${machine['post']['mean']}</td>
+              <td>${machine['post']['sd']}</td>
+              <td>${machine['post']['med']}</td>
+              <td>${machine['post']['max']}</td>
+            </tr>
+            <tr>
+              <td colspan="100%"><hr></td>
+            </tr>
+            <tr>
+              <td class='rotate' rowspan='3'><div>Random</div></td>
+              <td class='rotate' rowspan='3'><div>${random['train']['entries'].length}</div></td>
+              <td>Pretest</td>
+              <td>${random['pre']['min']}</td>
+              <td>${random['pre']['mean']}</td>
+              <td>${random['pre']['sd']}</td>
+              <td>${random['pre']['med']}</td>
+              <td>${random['pre']['max']}</td>
+            </tr>
+            <tr>
+              <td>Training</td>
+              <td>${random['train']['min']}</td>
+              <td>${random['train']['mean']}</td>
+              <td>${random['train']['sd']}</td>
+              <td>${random['train']['med']}</td>
+              <td>${random['train']['max']}</td>
+            </tr>
+            <tr>
+              <td>Posttest</td>
+              <td>${random['post']['min']}</td>
+              <td>${random['post']['mean']}</td>
+              <td>${random['post']['sd']}</td>
+              <td>${random['post']['med']}</td>
+              <td>${random['post']['max']}</td>
+          </table>`;
+        }
+        function computeStats(stat) {
+          _computeStats(stat['pre']);
+          _computeStats(stat['train']);
+          _computeStats(stat['post']);
+        }
+        function _computeStats(stat) {
+          const entries = stat['entries'];
+          entries.sort();
+          var mean = 0, sd = 0;
+          for (let i = 0; i < entries.length; i++) {
+            const e = entries[i];
+            mean += +e;
+          }
+          mean /= entries.length;
+          var variance = 0;
+          for (let i = 0; i < entries.length; i++)
+            variance += (entries[i] - mean) * (entries[i] - mean);
+          variance /= entries.length;
+          stat['min'] = Math.floor(entries[0] * 100) + '%';
+          stat['max'] = Math.floor(entries[entries.length-1] * 100) + '%';
+          if (entries.length % 2 == 0)
+            stat['med'] = Math.floor(((+entries[entries.length/2] + +entries[(entries.length/2)+1]) / 2) * 100) + '%';
+          else
+            stat['med'] = Math.floor(entries[(entries.length+1)/2] * 100) + '%';
+          stat['mean'] = Math.floor(mean * 100) + '%';
+          stat['sd'] = Math.floor(Math.sqrt(variance) * 100) + '%';
+        }
+        function show(selection) {
+          var sel = ridge;
+          if (selection == 'box') {
+            sel = box;
+          } else if (selection == 'dot') {
+            sel = dot;
+          } else if (selection == 'table') {
+            document.getElementById('results-vis').innerHTML = buildTable();
+            return;
+          }
+          vegaEmbed('#results-vis', sel);
+        }
+        vegaEmbed('#results-vis', ridge);
+
+        const fs = document.getElementById('fs-icon');
+
+        var curScroll = 0;
+        function fullscreen() {
+          if (document.fullscreenElement) {
+            document.exitFullscreen()
+              .catch((err) => console.error(err));
+            return;
+          }
+
+          const scroll = document.documentElement.scrollTop;
+          const element = document.body;
+          var requestMethod = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullScreen;
+          if (requestMethod) {
+              requestMethod.call(element);
+          } else if (typeof window.ActiveXObject !== "undefined") { // Older IE.
+              var wscript = new ActiveXObject("WScript.Shell");
+              if (wscript !== null) {
+                  wscript.SendKeys("{F11}");
+              }
+          }
+          curScroll = document.documentElement.scrollTop;
+        }
+
+        document.addEventListener('fullscreenchange', function() {
+      		updateFullScreen();
+      	}, false);
+      	document.addEventListener('webkitfullscreenchange', function() {
+      		updateFullScreen();
+      	}, false);
+      	document.addEventListener('mozfullscreenchange', function() {
+      		updateFullScreen();
+      	}, false);
+      	document.addEventListener('msfullscreenchange', function() {
+      		updateFullScreen();
+      	}, false);
+
+        function updateFullScreen() {
+          if (document.fullscreenElement != null || document.webkitFullscreenElement != null || document.mozFullScreenElement != null || document.msFullscreenElement != null) {
+      			document.getElementById("vis-figure").classList.add("fullscreen")
+            fs.src = 'assets/exitfullscreen.svg'
+      		} else {
+      			document.getElementById("vis-figure").classList.remove("fullscreen")
+            document.documentElement.scrollTop = curScroll;
+            fs.src = 'assets/fullscreen.svg';
+      		}
+        }
+      </script>
+    </div>
+    <div class='body-paragraph'>
+      <h2 class='body-heading'>Conclusion</h2>
+      <p class='paragraph-text'>
+        Our goal was to determine whether machine learning can help find a sequence of visual representations that raises students’ learning from perceptual-fluency tasks. To do this, we used machine teaching to reverse-engineer an optimal training sequence for a machine-learning algorithm. Next, we conducted an experiment with humans that compared the machine teaching sequence to a random sequence and to a sequence generated by a human expert on perceptual learning. The machine teaching sequence resulted in lower training performance, but higher posttest scores. The fact that the machine learning sequence yielded lower performance during training, but higher posttest scores suggests that this sequence induced desirable difficulties. Desirable difficulties refers to interventions yielding lower performance during training, but higher long-term learning. Given that visual representations are so common, we think that our findings will be broadly useful.
+      </p>
+    </div>
+    <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+  </body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Visual Abstract</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap" rel="stylesheet">
+    <link href="abstract.css" rel="stylesheet" type='text/css'>
+  </head>
+  <body>
+    <h1 id='feedback'>Are the following two molecules the same?</h1>
+    <div style="margin: auto; display: flex; justify-content: space-around;" class='container'>
+      <div class='container'>
+        <img id='Lewis'></img>
+      </div>
+      <div class='container'>
+        <img id='Space'></img>
+      </div>
+    </div>
+    <div style="display: flex; flex-direction: row; justify-content: space-around; align-items: center; height: 150px;">
+      <div id='button-box'>
+        <div class='radio-div'>
+          <input type='radio' name='answer' id='same'>
+          <label for='same'>Yes</label>
+        </div>
+        <div class='radio-div'>
+          <input type='radio' name='answer' id='diff'>
+          <label for='diff'>No</label>
+        </div>
+      </div>
+      <div>
+        <button id='button' onclick='submit()'>Submit</button>
+      </div>
+    </div>
+  </body>
+  <script>
+    var xml = new XMLHttpRequest();
+    var moles = null;
+    xml.open('GET', 'moles.csv', false);
+    xml.send();
+    if (xml.status==200) {
+      moles = xml.responseText.split(',');
+    }
+
+    const lewis = document.getElementById('Lewis');
+    const space = document.getElementById('Space');
+    const same = document.getElementById('same');
+    const diff = document.getElementById('diff');
+    const button = document.getElementById('button');
+
+    var sameCorrect = null;
+    same.checked = false;
+    diff.checked = false;
+    next();
+
+    function submit() {
+      var r = document.querySelector('input[name="answer"]:checked');
+      if (r.id === 'same') {
+        if (sameCorrect)
+          correct(r);
+        else
+          r.parentElement.classList.add('incorrect');
+      } else if (r.id === 'diff') {
+        if (!sameCorrect)
+          correct(r);
+        else
+          r.parentElement.classList.add('incorrect');
+      }
+    }
+
+    function correct(r) {
+      same.parentElement.classList.remove('incorrect');
+      diff.parentElement.classList.remove('incorrect');
+      r.parentElement.classList.add('correct');
+
+      button.innerHTML = 'Continue-->';
+      button.onclick = () => cont();
+    }
+
+    function cont() {
+      same.parentElement.classList.remove('correct');
+      diff.parentElement.classList.remove('correct');
+      same.checked = false;
+      diff.checked = false;
+      button.innerHTML = 'Submit';
+      button.onclick = () => submit();
+      next();
+    }
+
+    function next() {
+      //Generate new problem
+      if (Math.random() > 0.5) {
+        //Same
+        l = s = getRandomInt(moles.length);
+        sameCorrect = true;
+      } else {
+        //Different
+        l = getRandomInt(moles.length);
+        do {
+          s = getRandomInt(moles.length);
+        } while (l == s);
+        sameCorrect = false;
+      }
+      lewis.src = 'pics/Lewis_' + moles[l] + '.jpg';
+      space.src = 'pics/SF_' + moles[s] + '.jpg';
+    }
+
+    // function sleep(milliseconds) {
+    //   var start = new Date().getTime();
+    //   for (var i = 0; i < 1e7; i++) {
+    //     if ((new Date().getTime() - start) > milliseconds){
+    //       break;
+    //     }
+    //   }
+    // }
+
+    function getRandomInt(max) {
+      return Math.floor(Math.random() * Math.floor(max));
+    }
+  </script>
+</html>

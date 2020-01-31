@@ -73,7 +73,7 @@ const projects = [
     img: [seevita1, seevita2, seevita3, seevita4, seevita5, seevita6, seevita7, seevita8],
     links: {
       source: 'url',
-      demo: 'url',
+      demo: 'demo/svdistil/index.html',
     },
   },
   {
@@ -108,8 +108,8 @@ const projects = [
            This website is made in React, using the Material UI library, with Gatsby for the backend.`,
     img: [image, image, image],
     links: {
-      source: 'url',
-      demo: 'url',
+      source: 'https://github.com/Calvin1119/portfolio',
+      demo: '/',
     },
   },
 ]
