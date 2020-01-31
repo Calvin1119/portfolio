@@ -27,7 +27,7 @@ export default class ProjectModal extends React.Component {
       return null
     const links = []
     for (let [key, value] of Object.entries(this.props.project.links)) {
-      links.push(<Button href={value} key={key}>{key}</Button>)
+      links.push(<Button href={value} target='_blank' key={key}>{key}</Button>)
     }
     return (
       <Modal open={this.props.open} onClose={this.props.onClose}>
