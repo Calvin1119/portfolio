@@ -1,0 +1,368 @@
+
+html, body {
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  background-color: white;
+}
+
+#landing {
+  width: 100%;
+  min-height: 100%;
+  background-color: #123659;
+  display: inline-block;
+  padding: 0px;
+  margin: 0px;
+}
+
+#toolbar {
+  padding-top: 63px;
+  margin: auto;
+  width: 80%;
+    flex-direction: row-reverse;
+}
+
+   
+        
+.toolbtn {
+  font-family: Montserrat;
+  font-size: 20px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.2;
+  letter-spacing: 1.8px;
+  text-align: right;
+  color: #f6cfc8;
+}
+
+#splashtxtbox {
+  margin: auto;
+  width: 60%;
+}
+
+#title {
+  font-family: proxima-nova;
+  font-size: 50px;
+  font-weight: 650;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.68;
+  letter-spacing: 5.8px;
+  text-align: left;
+  color: #e7e7e7;
+}
+
+#splashtxt {
+  font-family: proxima-nova;
+  font-size: 35px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.61;
+  letter-spacing: 0.98px;
+  color: #e7e7e7;
+}
+
+#signup {
+  width: 175px;
+  height: 60px;
+  background-color: #f6cfc8;
+  font-family: Montserrat;
+  font-size: 23px;
+  font-weight: 500;
+  font-style:  normal;
+  font-stretch: normal;
+  line-height: 1.2;
+  letter-spacing: 1.5px;
+  border-radius: 5px;
+  /* box-shadow: .25px .25px #f6cfc8; */
+}
+
+#carouselpg {
+  padding-top: 5%;
+}
+
+#carousel {
+  width: 835.9px;
+  height: 497.9px;
+  object-fit: contain;
+  z-index: 30;
+  border-radius: 36px 36px 36px 36px;
+  -moz-border-radius: 36px 36px 36px 36px;
+  -webkit-border-radius: 36px 36px 36px 36px;
+  border: 6px solid #e7e7e744;
+}
+
+.carouselselect {
+  font-family: Roboto;
+  font-size: 19px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 2;
+  letter-spacing: 0.3px;
+  text-align: left;
+  color: #302e2e;
+}
+
+.carouselbtn {
+  font-family: Montserrat;
+  font-size: 22px;
+  font-weight: 450;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.92;
+  letter-spacing: normal;
+  text-align: left;
+  color: #5a5a5a;
+  padding-left: 1em;
+  margin-left: 1em;
+}
+
+.active {
+  background-color: #123659;
+  color: white;
+  border-radius: 10px;
+}
+
+#carouseltxt {
+  font-family: proxima-nova;
+  font-size: 30px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.43;
+  letter-spacing: 0.84px;
+  text-align: left;
+  padding-left: 1.5em;
+  color: #302e2e;
+}
+
+.page {
+  width: 65%;
+  min-height: 100%;
+  margin: auto;
+}
+
+
+.value-propositions {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-row-gap: 5em;
+  grid-column-gap: 7em;
+  padding-bottom: 6em;
+    
+}
+
+@media (max-width: 750px) {
+    .value-propositions {
+  grid-template-columns: 1fr;
+
+}
+}
+
+.flexcontainer {
+  display: flex;
+  flex-direction: row;    
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+.roadmapblock {
+  width: 250px;
+}
+
+.roadmaptitle {
+  font-family: Montserrat;
+  font-size: 29px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.41;
+  letter-spacing: normal;
+  color: #302e2e;
+}
+
+.roadmaptxt {
+  font-family: Montserrat;
+  font-size: 20px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: #302e2e;
+}
+
+#principlehead {
+  font-family: proxima-nova;
+  font-size: 45px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.2;
+  letter-spacing: 1.8px;
+  color: #205284;
+}
+
+.principletxt {
+  width: 500px;
+  font-family: Montserrat;
+  font-size: 25px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 2;
+  letter-spacing: normal;
+  text-align: left;
+  color: #5a5a5a;
+}
+
+.principletitle {
+  font-family: proxima-nova;
+  font-size: 35px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 0.86;
+  letter-spacing: 2.49px;
+  text-align: left;
+  color: #302e2e;
+}
+
+#timelinetitle {
+  font-family: proxima-nova;
+  font-size: 45px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.2;
+  letter-spacing: 1.35px;
+  color: #205284;
+  position: relative;
+  right: 1.5%;
+}
+
+#carouseltitle {
+  font-family: proxima-nova;
+  font-size: 40px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.08;
+  letter-spacing: 1.12px;
+  color: #302e2e;
+}
+
+.footericon {
+  width: 40px;
+  height: 40px;
+  background-color: #123659;
+  border-radius: 5px;
+}
+
+#footertitle {
+  font-family: proxima-nova;
+  font-size: 40px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.23;
+  letter-spacing: 1.32px;
+  color: #123659;
+  border-bottom: 2px solid #123659;
+  padding-bottom: 8px;
+}
+
+.footertxt {
+  font-family: proxima-nova;
+  font-size: 25px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.2;
+  letter-spacing: 1.4px;
+  color: #123659;
+  padding-left: 20px;
+  padding-top: 8px;
+}
+
+#formpage {
+  width: 100%;
+  background-color: #123659;
+  display: inline-block;
+  padding: 0px;
+  margin: 0px;
+}
+
+#formtitle {
+  font-family: proxima-nova;
+  font-size: 40px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.5;
+  letter-spacing: 4px;
+  color: #f6cfc8;
+}
+
+form {
+  width: 25.5%;
+  height: 290px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+  padding-top: 27px;
+}
+
+input {
+  height: 50px;
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.22;
+  letter-spacing: normal;
+  color: #302e2e;
+  border: none;
+}
+
+input {
+  height: 50px;
+  font-family: proxima-nova;
+  font-size: 25px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  background-color: transparent;
+  color: #e7e7e7;
+}
+
+input[type=text], input[type=password] {
+  border-bottom: 1px solid #e7e7e7;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  border-bottom: 2px solid #e7e7e7;
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+plogo.style {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+

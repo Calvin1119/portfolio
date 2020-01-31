@@ -1,0 +1,40 @@
+body, html {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+button {
+  width: 200px;
+  text-align: center;
+  padding: 0px;
+  color: white;
+  background-color: #123659;
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  border-radius: 10px;
+}
+img {
+  width: 325px;
+  height: auto;
+  outline: 1px solid black;
+}
+.correct {
+  background-color: green;
+  color: white;
+}
+.incorrect {
+  background-color: red;
+  color: white;
+}
+.container {
+  position: relative;
+  text-align: center;
+}
+#button-box {
+  display: flex;
+  flex-direction: column;
+}
+.radio-div {
+  width: 100px;
+  text-align: left;
+  border-radius: 5px;
+}
