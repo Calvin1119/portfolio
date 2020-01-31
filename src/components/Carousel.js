@@ -3,11 +3,7 @@ import { styled } from '@material-ui/core/styles';
 import CardMedia from '@material-ui/core/CardMedia'
 import 'typeface-roboto';
 import {
-  Button,
-  CardActionArea,
-  Fab,
   IconButton,
-  Link,
 } from "gatsby-theme-material-ui";
 
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
@@ -45,10 +41,10 @@ export default class Carousel extends React.Component {
     ) : (
       <div style={{position: 'relative'}}>
         <AspectCardMedia image={this.props.images[this.state.curr]} />
-        <CarouselButton style={{left: 0}} onClick={this.left} disabled={this.state.curr == 0}>
+        <CarouselButton style={{left: 0}} onClick={this.left} disabled={this.state.curr === 0}>
           <ChevronLeftIcon />
         </CarouselButton>
-        <CarouselButton style={{right: 0}} onClick={this.right} disabled={this.state.curr == this.props.images.length - 1}>
+        <CarouselButton style={{right: 0}} onClick={this.right} disabled={this.state.curr === this.props.images.length - 1}>
           <ChevronRightIcon />
         </CarouselButton>
       </div>

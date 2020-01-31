@@ -1,5 +1,4 @@
 import { createMuiTheme } from "@material-ui/core";
-import green from '@material-ui/core/colors/green';
 
 // if (typeof window !== undefined)
 //   var dark = checkDark()

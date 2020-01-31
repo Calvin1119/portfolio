@@ -1,13 +1,9 @@
 import React from "react"
 import 'typeface-roboto';
 import AppBar from '@material-ui/core/AppBar'
-import Switch from '@material-ui/core/Switch'
 import Toolbar from '@material-ui/core/Toolbar'
 import {
   Button,
-  CardActionArea,
-  Fab,
-  IconButton,
   Link,
 } from "gatsby-theme-material-ui";
 

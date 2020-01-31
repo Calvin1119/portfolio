@@ -6,10 +6,6 @@ import CardContent from '@material-ui/core/CardContent'
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
 import {
-  Button,
-  CardActionArea,
-  Fab,
-  IconButton,
   Link,
 } from "gatsby-theme-material-ui";
 

@@ -4,13 +4,6 @@ import Grid from '@material-ui/core/Grid'
 import GridList from '@material-ui/core/GridList'
 import GridListTile from '@material-ui/core/GridListTile'
 import Typography from '@material-ui/core/Typography'
-import {
-  Button,
-  CardActionArea,
-  Fab,
-  IconButton,
-  Link,
-} from "gatsby-theme-material-ui";
 
 import Page from '../components/Page.js'
 

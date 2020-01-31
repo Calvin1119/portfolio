@@ -1,5 +1,4 @@
 import React from "react"
-import { styled } from '@material-ui/core/styles';
 import 'typeface-roboto'
 import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
@@ -7,10 +6,6 @@ import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
 import {
   Button,
-  CardActionArea,
-  Fab,
-  IconButton,
-  Link,
 } from "gatsby-theme-material-ui";
 
 import Page from '../components/Page.js'

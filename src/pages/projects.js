@@ -5,10 +5,6 @@ import GridListTile from '@material-ui/core/GridListTile'
 import GridListTileBar from '@material-ui/core/GridListTileBar'
 import {
   Button,
-  CardActionArea,
-  Fab,
-  IconButton,
-  Link,
 } from "gatsby-theme-material-ui";
 
 import Page from '../components/Page.js'
@@ -45,8 +41,8 @@ import lotus1 from '../img/Lotus-01.png'
 const projects = [
   {
     title: 'Rishi: Embedded Modules',
-    desc: `Many people find scientific papers hard to read, especially if they aren\'t used to reading them.
-           This project\'s goal was to remedy this by adding interactive elements to the writing.
+    desc: `Many people find scientific papers hard to read, especially if they aren't used to reading them.
+           This project's goal was to remedy this by adding interactive elements to the writing.
            We took a psychology paper on executive function, and added simulations of the experiments that the paper was based on.
            This concept would later be expanded on in the SeeVita project.`,
     img: [embedmod1, embedmod2, embedmod3],
