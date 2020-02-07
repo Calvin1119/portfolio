@@ -37,7 +37,7 @@ export default class Home extends React.Component {
               </Typography>
               <Typography variant='h6' component='p' paragraph>
                 As of February 2020 I'm in my third year of college, so my main goal is to gain some real world development experience before I graduate.
-                I hope to experience in a wide variety of fields and work environments, so I can have a better idea what to look for when searching for full-time employment.
+                I hope to gain experience in a wide variety of fields and work environments, so I can have a better idea what to look for when searching for full-time employment.
                 Large team, small team, enterprise, startup; I'm willing to try anything at least once.
               </Typography>
               <Typography variant='h6' component='p' paragraph>
