@@ -8,6 +8,7 @@ import Typography from '@material-ui/core/Typography'
 import Page from '../components/Page.js'
 
 import image from '../img/Headshot_BascomSmile.jpg'
+import first1 from '../img/First-01.jpg'
 
 export default class Home extends React.Component {
   render() {
@@ -20,7 +21,7 @@ export default class Home extends React.Component {
                 <img src={image} />
               </GridListTile>
               <GridListTile rows={2}>
-                <img src={image} />
+                <img src={first1} />
               </GridListTile>
             </GridList>
           </Grid>
@@ -33,7 +34,7 @@ export default class Home extends React.Component {
               I'm a student at the University of Wisconsin - Madison studying Computer Science and Linguistics.
             </Typography>
             <Typography variant='h6' component='p' paragraph>
-              I'm in my third year right now, so my main goal is to gain some real world development experience before I graduate.
+              As of February 2020 I'm in my third year of college, so my main goal is to gain some real world development experience before I graduate.
               I hope to experience in a wide variety of fields and work environments, so I can have a better idea what to look for when searching for full-time employment.
               Large team, small team, enterprise, startup; I'm willing to try anything at least once.
             </Typography>
