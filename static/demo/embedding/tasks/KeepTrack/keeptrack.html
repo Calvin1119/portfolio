@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title> Executive Functions </title>
+		<script src="jquery-3.3.1.min.js"></script>
+		<script defer src = "sim4jq.js"></script>
+	</head>
+	<link rel="stylesheet" href="lib/lab.css">
+	<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+
+	<body>
+
+
+		<div id="StartSimulation" class='title'><h1 style="text-align:center;"> Keep Track Task</h1> <p style="text-align: justify; width: 500px; margin: auto; font-size: 18px;"></br>There are five runs in this part. You will see a sequence of words on the center of the screen. All words belong to five chosen categories: animals, colors, clothes, countries, and sports. Exactly three of these categories will be present in each run, but the words' categories vary from run to run. At the end of each run, you will be asked to type the last word in each of those <b>three</b> categories. The category of every word will be hinted at the bottom of the screen. Please do your best.</p>
+
+
+			<button class="start">Start</button>
+		</div>
+		<div id="TrialNum"> </div>
+		<div id="Answering">
+			<h1 class="Trials"></h1>
+			<h2 id="question"></h2>
+			<h3 id="insert"></h3>
+			<button class="submit">Continue</button>
+		</div>
+		<div id="done">
+			<h1 id="correct"></h1>
+			<button class="done">Done</button>
+		</div>
+		<div id="name"></div>
+		<div id="Type"></div>
+		<div id="canvas">
+			<div id="words"></div>
+		</div>
+		<div id="dvData">
+			<table id= "dataTable">
+			<tr>
+				<td> trial # </td>
+				<td> User Inputs </td>
+				<td> Correct Answer </td>
+				<td> Time Spent </td>
+			</tr>
+			</table>
+		</div>
+
+			<i class="fa fa-bars"></i>
+			<a href="#" class="export">exp</a>
+	</body>
+</html>
