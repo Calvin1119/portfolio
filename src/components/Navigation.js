@@ -22,7 +22,7 @@ export default class Navigation extends React.Component {
       buttons.push(<NavButton key={i} link={pages[i][0]} text={pages[i][1]} current={pages[i][0] === this.props.current}/>);
     }
     return (
-      <AppBar position='static'>
+      <AppBar position='sticky'>
         <Toolbar>
           {buttons}
         </Toolbar>
