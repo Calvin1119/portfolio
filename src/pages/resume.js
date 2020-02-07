@@ -102,8 +102,8 @@ export default class Resume extends React.Component {
             </Card>
           </Grid>
         </Grid>
-        <Button style={{top: 25, float: 'right'}}>
-          Download Paper Version
+        <Button style={{top: 25, float: 'right'}} href='https://docs.google.com/document/d/1ABxA9Tj5qOcmCrXKriKjcdbqwKUYxSFAhnulgTZSoFA/edit?usp=sharing' target='_blank'>
+          View Paper Version
         </Button>
       </Page>
     )
