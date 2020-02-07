@@ -8,4 +8,5 @@ module.exports = {
   plugins: [
     'gatsby-theme-material-ui',
   ],
+  pathPrefix: "/reponame",
 }

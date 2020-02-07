@@ -30,7 +30,7 @@ export default class ProjectModal extends React.Component {
         <Grid container justify='center' alignItems='center'>
           <Grid item xs={6}>
             <Card>
-              <Carousel images={this.props.project.img}/>
+              <Carousel images={this.props.project.img} close={this.props.onClose}/>
               <CardHeader title={this.props.project.title} action={
                   <IconButton aria-label='close' onClick={this.props.onClose}>
                     <CloseIcon />

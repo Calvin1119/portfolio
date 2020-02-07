@@ -1,4 +1,6 @@
 import { createMuiTheme } from "@material-ui/core";
+import green from '@material-ui/core/colors/green';
+import red from '@material-ui/core/colors/red';
 
 // if (typeof window !== undefined)
 //   var dark = checkDark()
@@ -12,7 +14,8 @@ let dark = true
 
 const theme = createMuiTheme({
   palette: {
-    type: dark ? 'dark' : 'light'
+    type: dark ? 'dark' : 'light',
+    primary: green,
   },
   overrides: {
     MuiCard: {

@@ -48,16 +48,15 @@ const projects = [
     img: [embedmod1, embedmod2, embedmod3],
     links: {
       source: 'https://github.com/metascience-design-lab/scisims/blob/media-switching-brock/demo/index_EFdynamic.html',
-      demo: 'demo/index_EFdynamic.html',
+      demo: 'demo/embedding/index_EFdynamic.html',
     },
   },
   {
     title: 'Rishi: SeeVita Homepage',
     desc: `This was my first foray into traditional web design. This was just a simple website for the SeeVita project, but I'm very happy with how it turned out.
-           In particular, the back and forth process of making changes, seeing how the changes were recieved by the client, and moving forward was quite a valueable experience.`,
+           In particular, the back and forth process of making changes, seeing how the changes were recieved by the client, and moving forward was quite a valuable experience.`,
     img: [svhome1, svhome2, svhome3, svhome4, svhome5, svhome6],
     links: {
-      source: 'url',
       demo: 'demo/seevita-home/index.html',
     },
   },
@@ -68,7 +67,6 @@ const projects = [
            visualization was added.`,
     img: [seevita1, seevita2, seevita3, seevita4, seevita5, seevita6, seevita7, seevita8],
     links: {
-      source: 'url',
       demo: 'demo/svdistil/index.html',
     },
   },

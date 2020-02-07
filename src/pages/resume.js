@@ -31,7 +31,7 @@ export default class Resume extends React.Component {
                   <ul>
                     <li>Computer Science Major</li>
                     <li>Linguistics Major</li>
-                    <li>Deans List 3 Semesters</li>
+                    <li>Deans List 4 Semesters</li>
                   </ul>
                 </Typography>
               </CardContent>
@@ -102,7 +102,7 @@ export default class Resume extends React.Component {
             </Card>
           </Grid>
         </Grid>
-        <Button style={{paddingTop: 25, float: 'right'}}>
+        <Button style={{top: 25, float: 'right'}}>
           Download Paper Version
         </Button>
       </Page>

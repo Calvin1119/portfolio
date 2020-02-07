@@ -17,7 +17,8 @@ const AspectCardMedia = styled(CardMedia)({
 const CarouselButton = styled(IconButton)({
   position: 'absolute',
   top: '50%',
-  transform: 'translateY(-50%)'
+  transform: 'translateY(-50%)',
+  backgroundColor: 'rgba(1,1,1,0.75)'
 })
 
 export default class Carousel extends React.Component {
@@ -27,7 +28,28 @@ export default class Carousel extends React.Component {
       curr: 0
     }
     this.left = this.left.bind(this)
-    this.right=  this.right.bind(this)
+    this.right = this.right.bind(this)
+    this.handleKey = this.handleKey.bind(this)
+  }
+  componentDidMount(){
+    document.addEventListener("keydown", this.handleKey, false);
+  }
+  componentWillUnmount(){
+    document.removeEventListener("keydown", this.handleKey, false);
+  }
+  handleKey(e) {
+    switch(e.keyCode) {
+      // Right button
+      case 37:
+        if (this.state.curr > 0)
+          this.left()
+        break;
+      // Left button
+      case 39:
+        if (this.state.curr < this.props.images.length - 1)
+          this.right()
+        break;
+    }
   }
   left() {
     this.setState({curr: this.state.curr - 1})
@@ -41,10 +63,10 @@ export default class Carousel extends React.Component {
     ) : (
       <div style={{position: 'relative'}}>
         <AspectCardMedia image={this.props.images[this.state.curr]} />
-        <CarouselButton style={{left: 0}} onClick={this.left} disabled={this.state.curr === 0}>
+        <CarouselButton style={{left: 0}} onClick={this.left} disabled={this.state.curr === 0} color='primary'>
           <ChevronLeftIcon />
         </CarouselButton>
-        <CarouselButton style={{right: 0}} onClick={this.right} disabled={this.state.curr === this.props.images.length - 1}>
+        <CarouselButton style={{right: 0}} onClick={this.right} disabled={this.state.curr === this.props.images.length - 1} color='primary'>
           <ChevronRightIcon />
         </CarouselButton>
       </div>
