@@ -7,6 +7,7 @@ import GridListTile from '@material-ui/core/GridListTile'
 import Typography from '@material-ui/core/Typography'
 
 import Page from '../components/Page.js'
+import TextTile from '../components/TextTile.js'
 
 import image from '../img/Headshot_BascomSmile.jpg'
 import crosscountry from '../img/CrossCountry.jpg'
@@ -77,8 +78,9 @@ export default class About extends React.Component {
                 and helped with the restoration efforts for Native American languages.
               </Typography>
               <Typography variant='body1' paragraph>
-                After graduation, I hope to get an industry job.
-                I don't care as much about which field I end up in.
+                After graduation, I hope to join the workforce immediately.
+                Which field I end up in doesn't matter as much to me. Ideally I would end up using both my Computer Science and Linguistics degrees, but if I end up using
+                only one or the other that's fine as well.
                 What I enjoy more than anything else is finding solutions to problems.
                 If you have problems that need to be solved, be sure to let me know.
               </Typography>
@@ -86,18 +88,6 @@ export default class About extends React.Component {
           </GridListTile>
         </GridList>
       </Page>
-    )
-  }
-}
-
-class TextTile extends React.Component {
-  render() {
-    return (
-      <Card>
-        <CardContent>
-          {this.props.children}
-        </CardContent>
-      </Card>
     )
   }
 }
